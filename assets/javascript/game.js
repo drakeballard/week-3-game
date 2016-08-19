@@ -42,4 +42,15 @@
 
 //computer needs to recognize the EndUser is responding/guessing. In this case a letter key is pushed
 
-	//
+	//keyup illustrates that a guess was being used and needs to be subtracted. include a consolelog to see if page is responding.
+
+	//the EndUser guess needs to be stored so that either the computer or EndUser cannot cheat
+
+	//So the EndUserGuess needs to be added to the EndUserGuesses
+
+	//the guess will be recorded to the document --> guess count
+
+
+	//Here we need fome if and else statements. 
+
+	
