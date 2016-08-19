@@ -50,9 +50,14 @@ function lose (){
 		console.log('YOU LOOSE!!! SUCKA... total losses:' + lossess);
 }
 
-	//the function needs to be recorded
-
+	//the function needs to be recorded. the html page needs to reflect this info. 
+function record () {
+	html = '<p>Wins:' + wins + '</p>'
+		   '<p>Losses:' + lose + '</p>'
+		   '<p>Remaining Guesses Left:' + guessCount + '</p>'
+		   '<p> Your Guesses thus far:' + EndUserGuesses + '</p>';
 }
+
 
 
 
