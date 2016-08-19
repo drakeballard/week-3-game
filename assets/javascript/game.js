@@ -31,12 +31,30 @@
 }
 
 // reset all the variables
+function reset () {
+	guessCount = 10;
+}	
+	// if the EndUser wins --> formula for winning
+function win () {
+		wins++;
+		init();
+		record();
+		console.log('YOU WIN!!!! total wins:' = wins);
+}
 
-// if the EndUser wins --> formula for winning
+	//tf the EndUser losses --> formula for loosing
+function lose (){
+		losses++;
+		init();
+		record();
+		console.log('YOU LOOSE!!! SUCKA... total losses:' + lossess);
+}
 
-//tf the EndUser lossess --> formula for loosing
+	//the function needs to be recorded
 
-//the function needs to be recorded
+}
+
+
 
 
 
@@ -51,6 +69,10 @@
 	//the guess will be recorded to the document --> guess count
 
 
-	//Here we need fome if and else statements. 
+	//Here we need some if and else statements. 
 
-	
+
+
+
+
+
