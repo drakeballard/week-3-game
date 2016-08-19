@@ -16,11 +16,16 @@
 
 //The game can be initiated with the following factors to be considered:  
 	function init () {
-		console.log()
 
 	//the computer needs to pick (generate) a randome letter out of 26. 
-	//After computer selects  the letter, it needs to remember (recall) it.
-	//The EndUser can now start guessing the stored "letter" that the computer selects. In html i indicated that EndUser only gets 10 tries
-	//After the 10 tries, the computer gets to reveal the letter that was selected but gets to select a new letter by reseting itself
+		computerGuess = Math.floor(Math.random()*letters);
 
+	//After computer selects  the letter, it needs to remember (recall) it.
+		computerGuess = randomNum
+
+	//The EndUser can now start guessing the stored "letter" that the computer selects. In html i indicated that EndUser only gets 10 tries
+		guessCount = 10;
+
+	//After the 10 tries, the computer gets to reveal the letter that was selected but gets to select a new letter by reseting itself
+		EndUserGuesses = x;
 }
