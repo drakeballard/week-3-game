@@ -29,3 +29,17 @@
 	//After the 10 tries, the computer gets to reveal the letter that was selected but gets to select a new letter by reseting itself
 		EndUserGuesses = x;
 }
+
+// reset all the variables
+
+// if the EndUser wins --> formula for winning
+
+//tf the EndUser lossess --> formula for loosing
+
+//the function needs to be recorded
+
+
+
+//computer needs to recognize the EndUser is responding/guessing. In this case a letter key is pushed
+
+	//
