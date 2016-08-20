@@ -8,7 +8,6 @@ var userGuess,
 	losses = 0,
 	guessCount = 10,
 	letters,
-	randomNum,
 	html;
 
 //since their are 26 letters in the alphabet. They have to be put into an array. Does each letter have to be in its own array?
@@ -17,10 +16,10 @@ letters = ("abcdefghijklmnopqrstuvwxyz").split("");
 
 
 //The game can be initiated with the following factors to be considered:  
-function init () {
+function init() {
 
 	//the computer needs to pick (generate) a randome letter out of 26. 
-	computerGuess = Math.floor(Math.random()*letters.length);
+	randomNum = Math.floor(Math.random()*letters.length);
 
 	//After computer selects  the letter, it needs to remember (recall) it.
 	computerGuess = letters[randomNum];
@@ -33,34 +32,32 @@ function init () {
 }
 
 // reset all the variables
-function reset () {
-	guessCount = 10;
+function reset() {
+    guessCount = 10;
 }	
 	// if the EndUser wins --> formula for winning
-function win () {
-	wins++;
-	init();
-	record();
-	console.log('YOU WIN!!!! total wins:' + wins);
+function win() {
+  	wins++;
+ 	init();
+  	record();
+  	console.log('you win. nicely done! total wins: ' + wins);
 }
-
 	//tf the EndUser losses --> formula for loosing
-function lose (){
-	losses++;
-	init();
-	record();
-	console.log('YOU LOOSE!!! SUCKA... total losses:' + lossess);
+function lose() {
+  	losses++;
+  	init();
+  	record();
+  	console.log('sorry, you lose sucka. total losses: ' + losses);
 }
 
 	//the function needs to be recorded. the html page needs to reflect this info. 
-function record () {
-	html = '<p>Wins:' + wins + '</p>'
-		   '<p>Losses:' + lose + '</p>'
-		   '<p>Remaining Guesses Left:' + guessCount + '</p>'
-		   '<p> Your Guesses thus far:' + userGuesses + '</p>';
-	document.querySelector('#thegame').innerHTML = html;	   
+function record() {
+  	html='<p>Wins: ' + wins + '</p>' +
+         '<p>Losses: ' + losses + '</p>' +
+         '<p>Guesses left: ' + guessCount + '</p>' +
+         '<p>Your Guesses so far: ' + userGuesses + '</p>';
+ 	 document.querySelector('#thegame').innerHTML = html;
 }
-
 
 
 
@@ -71,10 +68,9 @@ document.onkeyup = function(event) {
 
 	//keyup illustrates that a guess was being used and needs to be subtracted. include a consolelog to see if page is responding.
 	guessCount--;
-	console.log('guesses remaining:' + guessCount)
-	
+  	console.log('guesses remaining: ' + guessCount);
 	//the EndUser guess needs to be stored so that either the computer or EndUser cannot cheat
-	userGuess = String.fromCharCode(event.keyCode).toLowerCase()
+	userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
 	//So the EndUserGuess needs to be added to the EndUserGuesses
 	userGuesses.push(userGuess);
@@ -83,12 +79,14 @@ document.onkeyup = function(event) {
 	record();
 
 	//Here we need some if and else statements. 
-if (userGuess === computerGuess)
-{
-	win();
-	}else if (guessCount === 0) {
-	lose();
-	}
+	if(userGuess === computerGuess)
+	{
+		
+		} else if(guessCount === 0) {
+    	lose();
+  		} else {
+  		console.log(userGuess + ' is not the same as ' + computerGuess);
+  }			
 }
 
 init();
