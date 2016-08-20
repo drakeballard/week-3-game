@@ -1,20 +1,20 @@
 //pseudocode for psychic game (nothing needs to be changed under line 1)
 
 //need to decalre certain variables for this game to initiate
-	var enduserGuess,
-	    enduserGuesses = [],
-	    computerGuess,
-	    wins = 0,
-	    losses = 0,
-	    guessCount = 10,
-	    letters,
-	    randomNum,
-	    html;
+var userGuess,
+	userGuesses = [],
+	computerGuess,
+	wins = 0,
+	losses = 0,
+	guessCount = 10,
+	letters,
+	randomNum,
+	html;
 
 //since their are 26 letters in the alphabet. They have to be put into an array. Does each letter have to be in its own array?
 	//This needs to split some how?
+letters = ("abcdefghijklmnopqrstuvwxyz").split("");
 
-	letters = ("abcdefghijklmnopqrstuvxyz").split("");
 
 //The game can be initiated with the following factors to be considered:  
 function init () {
@@ -29,7 +29,7 @@ function init () {
 	guessCount = 10;
 
 	//After the 10 tries, the computer gets to reveal the letter that was selected but gets to select a new letter by reseting itself
-	enduserGuesses = [];
+	userGuesses = [];
 }
 
 // reset all the variables
@@ -57,7 +57,7 @@ function record () {
 	html = '<p>Wins:' + wins + '</p>'
 		   '<p>Losses:' + lose + '</p>'
 		   '<p>Remaining Guesses Left:' + guessCount + '</p>'
-		   '<p> Your Guesses thus far:' + enduserGuesses + '</p>';
+		   '<p> Your Guesses thus far:' + userGuesses + '</p>';
 	document.querySelector('#thegame').innerHTML = html;	   
 }
 
@@ -71,25 +71,27 @@ document.onkeyup = function(event) {
 
 	//keyup illustrates that a guess was being used and needs to be subtracted. include a consolelog to see if page is responding.
 	guessCount--;
-	console log('guesses remaining:' + guessCount)
+	console.log('guesses remaining:' + guessCount)
 	
 	//the EndUser guess needs to be stored so that either the computer or EndUser cannot cheat
-	EndUserGuess = String.fromCharCode (event.keyCode) .toLowerCase()
+	userGuess = String.fromCharCode(event.keyCode).toLowerCase()
 
 	//So the EndUserGuess needs to be added to the EndUserGuesses
-	EndUserGuesses.push(EndUserGuess);
+	userGuesses.push(userGuess);
 
 	//the guess will be recorded to the document --> guess count
 	record();
 
 	//Here we need some if and else statements. 
-		if (EndUserGuess === computerGuess){
-			win();
-		}
-		else if (guessCount === 0) {
-			lose();
-		}
+if (userGuess === computerGuess)
+{
+	win();
+	}else if (guessCount === 0) {
+	lose();
+	}
 }
+
+init();
 
 	
 
