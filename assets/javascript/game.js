@@ -64,18 +64,30 @@ function record () {
 
 
 //computer needs to recognize the EndUser is responding/guessing. In this case a letter key is pushed
+document.onkeyup = function(event) {
 
 	//keyup illustrates that a guess was being used and needs to be subtracted. include a consolelog to see if page is responding.
-
+	guessCount--;
+	console log('guesses remaining:' + guessCount)
+	
 	//the EndUser guess needs to be stored so that either the computer or EndUser cannot cheat
-
+	EndUserGuess = ???
 	//So the EndUserGuess needs to be added to the EndUserGuesses
-
+	EndUserGuesses.push(EndUserGuess);
 	//the guess will be recorded to the document --> guess count
-
+	record();
 
 	//Here we need some if and else statements. 
+		if (EndUserGuess === computerGuess){
+			win();
+		}
+		else if (guessCount === 0) {
+			lose();
+		}
 
+}
+
+	
 
 
 
