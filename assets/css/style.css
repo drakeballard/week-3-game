@@ -1,0 +1,12 @@
+body {
+  background: url(assets/images/image1.jpg) green;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 20px;
+}

@@ -6,7 +6,7 @@ var userGuess,
 	computerGuess,
 	wins = 0,
 	losses = 0,
-	guessCount = 10,
+	guessCount = 13,
 	letters,
 	html;
 
@@ -25,7 +25,7 @@ function init() {
 	computerGuess = letters[randomNum];
 
 	//The EndUser can now start guessing the stored "letter" that the computer selects. In html i indicated that EndUser only gets 10 tries
-	guessCount = 10;
+	guessCount = 13;
 
 	//After the 10 tries, the computer gets to reveal the letter that was selected but gets to select a new letter by reseting itself
 	userGuesses = [];
@@ -33,7 +33,7 @@ function init() {
 
 // reset all the variables
 function reset() {
-    guessCount = 10;
+    guessCount = 13;
 }	
 	// if the EndUser wins --> formula for winning
 function win() {
@@ -80,8 +80,8 @@ document.onkeyup = function(event) {
 
 	//Here we need some if and else statements. 
 	if(userGuess === computerGuess)
-	{
-		
+	{	
+		win();		
 		} else if(guessCount === 0) {
     	lose();
   		} else {
