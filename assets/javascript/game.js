@@ -38,10 +38,10 @@ function reset () {
 }	
 	// if the EndUser wins --> formula for winning
 function win () {
-		wins++;
-		init();
-		record();
-		console.log('YOU WIN!!!! total wins:' = wins);
+	wins++;
+	init();
+	record();
+	console.log('YOU WIN!!!! total wins:' = wins);
 }
 
 	//tf the EndUser losses --> formula for loosing
