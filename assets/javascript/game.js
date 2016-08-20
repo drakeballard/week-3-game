@@ -1,15 +1,15 @@
 //pseudocode for psychic game (nothing needs to be changed under line 1)
 
 //need to decalre certain variables for this game to initiate
-	var computerGuess,
-		EndUserGuess,
-		EndUserGuesses = [],
-		letters,
-		wins = 0,
-		losses = 0,
-		guessCount = 10,
-		randomNum,
-		html;
+	var enduserGuess,
+	    enduserGuesses = [],
+	    computerGuess,
+	    wins = 0,
+	    losses = 0,
+	    guessCount = 10,
+	    letters,
+	    randomNum,
+	    html;
 
 //since their are 26 letters in the alphabet. They have to be put into an array. Does each letter have to be in its own array?
 	//This needs to split some how?
@@ -17,19 +17,19 @@
 	letters = ("abcdefghijklmnopqrstuvxyz").split("");
 
 //The game can be initiated with the following factors to be considered:  
-	function init () {
+function init () {
 
 	//the computer needs to pick (generate) a randome letter out of 26. 
-		computerGuess = Math.floor(Math.random()*letters.length);
+	computerGuess = Math.floor(Math.random()*letters.length);
 
 	//After computer selects  the letter, it needs to remember (recall) it.
-		computerGuess = letters[randomNum];
+	computerGuess = letters[randomNum];
 
 	//The EndUser can now start guessing the stored "letter" that the computer selects. In html i indicated that EndUser only gets 10 tries
-		guessCount = 10;
+	guessCount = 10;
 
 	//After the 10 tries, the computer gets to reveal the letter that was selected but gets to select a new letter by reseting itself
-		EndUserGuesses = [];
+	enduserGuesses = [];
 }
 
 // reset all the variables
@@ -58,6 +58,7 @@ function record () {
 		   '<p>Losses:' + lose + '</p>'
 		   '<p>Remaining Guesses Left:' + guessCount + '</p>'
 		   '<p> Your Guesses thus far:' + EndUserGuesses + '</p>';
+	document.querySelector('#game').innerHTML = html;	   
 }
 
 
@@ -73,9 +74,11 @@ document.onkeyup = function(event) {
 	console log('guesses remaining:' + guessCount)
 	
 	//the EndUser guess needs to be stored so that either the computer or EndUser cannot cheat
-	EndUserGuess = ???
+	EndUserGuess = String.fromCharCode (event.keyCode) .toLowerCase()
+
 	//So the EndUserGuess needs to be added to the EndUserGuesses
 	EndUserGuesses.push(EndUserGuess);
+
 	//the guess will be recorded to the document --> guess count
 	record();
 
@@ -86,7 +89,6 @@ document.onkeyup = function(event) {
 		else if (guessCount === 0) {
 			lose();
 		}
-
 }
 
 	
