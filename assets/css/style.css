@@ -1,13 +1,17 @@
 body {
-  background: url(assets/images/image1.jpg) green;
-  text-align: center;
+  background-image: url('../images/ball_psych.jpg');
+  background-repeat:no-repeat;
+  background-size: 100%;
+
 }
 
 h1 {
   font-size: 50px;
   font-weight: bold;
+  color: white;
 }
 
 p {
   font-size: 20px;
+  color: white;
 }
